@@ -1,32 +1,50 @@
-<body class="bg-gray-100 min-h-screen flex justify-center items-start py-10">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
 
-    <div class="bg-white w-full max-w-2xl p-6 rounded-lg shadow-lg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-        <h1 class="text-3xl font-bold text-center mb-6">
-            Expense Tracker 💸
-        </h1>
+<body class="min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 flex justify-center items-center p-6">
 
-        <!-- Form Section -->
-        <div class="flex flex-col gap-4">
+    <div class="w-full max-w-2xl bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl p-8">
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-extrabold text-gray-800">
+                Smart Expenses
+            </h1>
+            <p class="text-gray-500 mt-2">
+                Track your daily spending with ease
+            </p>
+        </div>
+
+        <!-- Form -->
+        <div class="space-y-4">
 
             <input
                 type="text"
                 id="description"
-                placeholder="Expense description"
-                class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Expense Description"
+                class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
 
             <input
                 type="number"
                 id="amount"
                 placeholder="Amount"
-                class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
 
             <select
                 id="category"
-                class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
+                <option value="">Select Category</option>
                 <option value="food">Food</option>
                 <option value="transport">Transport</option>
                 <option value="shopping">Shopping</option>
@@ -35,7 +53,7 @@
 
             <button
                 id="addBtn"
-                class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:scale-105 transition duration-300"
             >
                 Add Expense
             </button>
@@ -43,10 +61,14 @@
         </div>
 
         <!-- Filter -->
-        <div class="mt-6">
+        <div class="mt-8">
+            <label class="block mb-2 font-medium text-gray-700">
+                Filter Expenses
+            </label>
+
             <select
                 id="filterCategory"
-                class="w-full border rounded-lg p-3"
+                class="w-full p-4 rounded-xl border border-gray-300"
             >
                 <option value="all">All Categories</option>
                 <option value="food">Food</option>
@@ -57,17 +79,26 @@
         </div>
 
         <!-- Expense List -->
-        <ul id="expenseList" class="mt-6 space-y-3">
-            <!-- Expenses will appear here -->
-        </ul>
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">
+                Expenses
+            </h2>
+
+            <ul id="expenseList" class="space-y-3"></ul>
+        </div>
 
         <!-- Total -->
-        <div class="mt-6 text-center">
-            <h2 class="text-2xl font-semibold">
-                Total: Ksh <span id="total">0</span>
+        <div class="mt-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl text-center shadow-lg">
+            <p class="text-lg">Total Spending</p>
+
+            <h2 class="text-4xl font-bold mt-2">
+                Ksh <span id="total">0</span>
             </h2>
         </div>
 
     </div>
 
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
+</html>
