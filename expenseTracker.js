@@ -1,4 +1,4 @@
-class ExpenseTracker{
+export class ExpenseTracker{
     constructor(){
         this.expenses = []; // Create an empty array
     }
@@ -22,13 +22,13 @@ class ExpenseTracker{
    }
    //Give me only expenses that match this category
    filterByCategory(category){
-    return this.expense.filter(expense => expense.category === category)
+    return this.expenses.filter(expense => expense.category === category)
 
    }
 
 }
 
-module.exports = ExpenseTracker;
+
 
 
 

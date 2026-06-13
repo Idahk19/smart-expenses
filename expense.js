@@ -1,5 +1,5 @@
 // Every expense you create later will follow this structure.
-class Expense{ 
+export class Expense{ 
     constructor(description, amount, category){
         this.description = description;
         this.amount = amount;
@@ -7,4 +7,3 @@ class Expense{
   
     }
 }
-module.exports = Expense;
