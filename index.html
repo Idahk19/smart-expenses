@@ -1,0 +1,73 @@
+<body class="bg-gray-100 min-h-screen flex justify-center items-start py-10">
+
+    <div class="bg-white w-full max-w-2xl p-6 rounded-lg shadow-lg">
+
+        <h1 class="text-3xl font-bold text-center mb-6">
+            Expense Tracker 💸
+        </h1>
+
+        <!-- Form Section -->
+        <div class="flex flex-col gap-4">
+
+            <input
+                type="text"
+                id="description"
+                placeholder="Expense description"
+                class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount"
+                class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+
+            <select
+                id="category"
+                class="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button
+                id="addBtn"
+                class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+            >
+                Add Expense
+            </button>
+
+        </div>
+
+        <!-- Filter -->
+        <div class="mt-6">
+            <select
+                id="filterCategory"
+                class="w-full border rounded-lg p-3"
+            >
+                <option value="all">All Categories</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="shopping">Shopping</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- Expense List -->
+        <ul id="expenseList" class="mt-6 space-y-3">
+            <!-- Expenses will appear here -->
+        </ul>
+
+        <!-- Total -->
+        <div class="mt-6 text-center">
+            <h2 class="text-2xl font-semibold">
+                Total: Ksh <span id="total">0</span>
+            </h2>
+        </div>
+
+    </div>
+
+</body>
