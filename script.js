@@ -58,6 +58,12 @@ function updateUI(){
         <td class="p-3">Ksh ${expense.amount}</td>
         <td class="p-3 text-center">
             <button
+                onclick="editExpense(${expense.id})"
+                class="bg-green-500 hover:bg-gray-600 text-white px-3 py-1 rounded"
+            >
+                Edit
+            </button>
+            <button
                 onclick="deleteExpense(${expense.id})"
                 class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
             >
