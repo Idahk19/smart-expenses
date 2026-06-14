@@ -7,6 +7,7 @@ const amount = document.getElementById("amount");
 const category = document.getElementById("category");
 const list = document.getElementById("expenseList");
 const total = document.getElementById("total");
+const form = document.getElementById("expenseForm").reset();
 
 //creating ONE object that will store all expenses.
 const tracker = new ExpenseTracker();
@@ -18,16 +19,36 @@ addBtn.addEventListener("click", () => {
     const expense = new Expense ( //creating a single expense item.
         description.value,
         Number(amount.value),
-        category.value
+        category.value.toLowerCase()
     );
     tracker.addExpense(expense) //storing the expense inside your array.
     
     updateUI();
-})
+});
+
+// filterByCategory event listener
+
+filterCategory.addEventListener("change", () => {
+    updateUI();
+});
 
 function updateUI(){
     list.innerHTML = ""; // clear old list first
-    tracker.expenses.forEach((expense, index) =>{
+
+    let expensesToDisplay;
+
+    if (filterCategory.value === "all"){
+
+        expensesToDisplay = tracker.expenses;
+
+    }else{
+        expensesToDisplay = tracker.filterByCategory(
+
+            filterCategory.value
+        )
+    }
+
+    expensesToDisplay.forEach((expense, index) =>{
         list.innerHTML += `
     <tr class="border-b hover:bg-gray-50">
         <td class="p-3">${expense.description}</td>
@@ -46,6 +67,7 @@ function updateUI(){
     });
     total.textContent = tracker.calculateTotal();
 }
+
 window.deleteExpense = function(index) {
     const confirmDelete = confirm("Are you sure?");
     if (confirmDelete) {

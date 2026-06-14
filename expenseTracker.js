@@ -24,7 +24,8 @@ export class ExpenseTracker{
    }
    //Give me only expenses that match this category
    filterByCategory(category){
-    return this.expenses.filter(expense => expense.category === category)
+    return this.expenses.filter(expense =>
+         expense.category.toLowerCase() === category.toLowerCase())
 
    }
    saveExpenses(){

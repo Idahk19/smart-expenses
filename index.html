@@ -25,20 +25,21 @@
 
         <!-- Form -->
         <div class="space-y-4">
+            <form id="expenseForm">
 
             <input
                 type="text"
                 id="description"
                 placeholder="Expense"
                 class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            >
+            ><br><br>
 
             <input
                 type="number"
                 id="amount"
                 placeholder="Amount"
                 class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            >
+            ><br><br>
 
             <select
                 id="category"
@@ -50,6 +51,7 @@
                 <option value="shopping">Shopping</option>
                 <option value="other">Other</option>
             </select>
+            <br><br>
 
             <button
                 id="addBtn"
@@ -57,6 +59,7 @@
             >
                 Add Expense
             </button>
+            </form>
 
         </div>
 
