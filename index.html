@@ -29,7 +29,7 @@
             <input
                 type="text"
                 id="description"
-                placeholder="Expense Description"
+                placeholder="Expense"
                 class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
 
@@ -79,13 +79,22 @@
         </div>
 
         <!-- Expense List -->
-        <div class="mt-8">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">
-                Expenses
-            </h2>
+        <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="p-3 text-left">Description</th>
+                <th class="p-3 text-left">Category</th>
+                <th class="p-3 text-left">Amount</th>
+                <th class="p-3 text-center">Action</th>
+            </tr>
+        </thead>
 
-            <ul id="expenseList" class="space-y-3"></ul>
-        </div>
+        <tbody id="expenseList">
+            <!-- Expenses go here -->
+        </tbody>
+    </table>
+</div>
 
         <!-- Total -->
         <div class="mt-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-6 rounded-2xl text-center shadow-lg">

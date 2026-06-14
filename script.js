@@ -29,15 +29,20 @@ function updateUI(){
     list.innerHTML = ""; // clear old list first
     tracker.expenses.forEach((expense, index) =>{
         list.innerHTML += `
-           <li class="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-lg shadow-sm">
-    
-                ${expense.description} - ${expense.amount} (${expense.category})
-                <button onclick="deleteExpense(${index})"
-                style="background-color: red; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">
-                    Delete
-                </button>
-            </li>
-        `;
+    <tr class="border-b hover:bg-gray-50">
+        <td class="p-3">${expense.description}</td>
+        <td class="p-3">${expense.category}</td>
+        <td class="p-3">Ksh ${expense.amount}</td>
+        <td class="p-3 text-center">
+            <button
+                onclick="deleteExpense(${index})"
+                class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+            >
+                Delete
+            </button>
+        </td>
+    </tr>
+`;
     });
     total.textContent = tracker.calculateTotal();
 }
