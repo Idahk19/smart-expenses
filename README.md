@@ -1,6 +1,6 @@
 # Smart Expenses
 
-Smart Tracker is a simple yet powerful expense tracking application built with HTML, CSS, JavaScript, OOP principles, and unit testing using Jest.  
+Smart Tracker is a simple expense tracking application built with HTML, CSS, JavaScript, OOP principles, and unit testing using Jest.  
 It helps users manage daily expenses, categorize spending, and track total costs in a clean and structured interface.
 
 ## Features
@@ -72,7 +72,7 @@ Contributions are welcome! If you'd like to improve Smart Tracker, follow these 
 
 2. Clone your fork
 ```
-git clone https://github.com/your-username/smart-tracker.git
+git clone https://github.com/Idahk19/smart-tracker.git
 ```
 3. Create a new branch
 ```
