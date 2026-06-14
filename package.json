@@ -1,0 +1,27 @@
+{
+  "name": "smart-expenses",
+  "version": "1.0.0",
+  "description": "Smart Tracker is a simple expense tracking application built with HTML, CSS, JavaScript, OOP principles, and unit testing using Jest.  \r It helps users manage daily expenses, categorize spending, and track total costs in a clean and structured interface.",
+  "main": "expense.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Idahk19/smart-expenses.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Idahk19/smart-expenses/issues"
+  },
+  "homepage": "https://github.com/Idahk19/smart-expenses#readme",
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2"
+  }
+}

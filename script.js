@@ -18,7 +18,6 @@ updateUI();
 // add expense on click // event listener
 addBtn.addEventListener("click", () => {
     const expense = new Expense ( //creating a single expense item.
-        Date.now(),
         description.value,
         Number(amount.value),
         category.value.toLowerCase()
@@ -76,10 +75,10 @@ function updateUI(){
     total.textContent = tracker.calculateTotal();
 }
 
-window.deleteExpense = function(index) {
+window.deleteExpense = function(id) {
     const confirmDelete = confirm("Are you sure?");
     if (confirmDelete) {
-        tracker.removeExpense(index);
+        tracker.removeExpense(id);
         updateUI();
     }
 }

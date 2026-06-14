@@ -30,20 +30,25 @@ export class ExpenseTracker{
          expense.category.toLowerCase() === category.toLowerCase())
 
    }
-   saveExpenses(){
-    localStorage.setItem(
-        "expenses", JSON.stringify(this.expenses)
-    )
-   }
-   loadExpenses(){
-    const storedExpenses = localStorage.getItem("expenses");
-    if (storedExpenses) {
-        this.expenses = JSON.parse(storedExpenses)
+  saveExpenses() {
+    if (typeof localStorage !== "undefined") { // Only run this code if localStorage exists // jest skips it
+        localStorage.setItem(
+            "expenses",
+            JSON.stringify(this.expenses)
+        );
     }
-   }
+}
+  loadExpenses() {
+    if (typeof localStorage !== "undefined") { // Only run this code if localStorage exists
+        const storedExpenses = localStorage.getItem("expenses");
 
+        if (storedExpenses) {
+            this.expenses = JSON.parse(storedExpenses);
+        }
+    }
 }
 
+}
 
 
 
