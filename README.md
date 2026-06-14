@@ -101,3 +101,6 @@ Idah Karwitha
 MIT license
 
 ## Live URL
+```
+https://smart-expenses-zeta.vercel.app
+```
