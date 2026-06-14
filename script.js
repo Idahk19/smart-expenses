@@ -8,11 +8,12 @@ const category = document.getElementById("category");
 const list = document.getElementById("expenseList");
 const total = document.getElementById("total");
 
-// add expense on click 
-
 //creating ONE object that will store all expenses.
 const tracker = new ExpenseTracker();
+tracker.loadExpenses();
+updateUI();
 
+// add expense on click // event listener
 addBtn.addEventListener("click", () => {
     const expense = new Expense ( //creating a single expense item.
         description.value,
@@ -28,7 +29,8 @@ function updateUI(){
     list.innerHTML = ""; // clear old list first
     tracker.expenses.forEach((expense, index) =>{
         list.innerHTML += `
-            <li>
+           <li class="flex justify-between items-center bg-gray-50 border border-gray-200 p-4 rounded-lg shadow-sm">
+    
                 ${expense.description} - ${expense.amount} (${expense.category})
                 <button onclick="deleteExpense(${index})"
                 style="background-color: red; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">

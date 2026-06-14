@@ -4,7 +4,8 @@ export class ExpenseTracker{
     }
     // add a new expense
     addExpense(expense){
-   this.expenses.push(expense)
+   this.expenses.push(expense);
+   this.saveExpenses()
    }
 
    // Go through all expenses and add their amounts
@@ -19,11 +20,23 @@ export class ExpenseTracker{
 
    removeExpense(index){
      this.expenses.splice(index, 1)
+     this.saveExpenses();
    }
    //Give me only expenses that match this category
    filterByCategory(category){
     return this.expenses.filter(expense => expense.category === category)
 
+   }
+   saveExpenses(){
+    localStorage.setItem(
+        "expenses", JSON.stringify(this.expenses)
+    )
+   }
+   loadExpenses(){
+    const storedExpenses = localStorage.getItem("expenses");
+    if (storedExpenses) {
+        this.expenses = JSON.parse(storedExpenses)
+    }
    }
 
 }
