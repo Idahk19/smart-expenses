@@ -82,3 +82,24 @@ window.deleteExpense = function(id) {
         updateUI();
     }
 }
+window.editExpense = function(id) {
+    const expense = tracker.expenses.find(exp => exp.id === id);
+
+    if (!expense) return;
+
+    const newDescription = prompt("Edit description:", expense.description);
+    const newAmount = prompt("Edit amount:", expense.amount);
+    const newCategory = prompt("Edit category:", expense.category);
+
+    const updatedExpense = new Expense(
+        newDescription,
+        Number(newAmount),
+        newCategory.toLowerCase()
+    );
+
+    // keep same ID
+    updatedExpense.id = id;
+
+    tracker.updateExpense(id, updatedExpense);
+    updateUI();
+};

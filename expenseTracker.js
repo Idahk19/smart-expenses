@@ -30,6 +30,7 @@ export class ExpenseTracker{
          expense.category.toLowerCase() === category.toLowerCase())
 
    }
+
   saveExpenses() {
     if (typeof localStorage !== "undefined") { // Only run this code if localStorage exists // jest skips it
         localStorage.setItem(
@@ -46,6 +47,12 @@ export class ExpenseTracker{
             this.expenses = JSON.parse(storedExpenses);
         }
     }
+}
+updateExpense(id, updatedExpense) {
+    this.expenses = this.expenses.map(expense =>
+        expense.id === id ? updatedExpense : expense
+    );
+    this.saveExpenses();
 }
 
 }
