@@ -18,8 +18,10 @@ export class ExpenseTracker{
 
    // Go to position X and remove 1 item
 
-   removeExpense(index){
-     this.expenses.splice(index, 1)
+   removeExpense(id){
+    this.expenses = this.expenses.filter(
+    expense => expense.id !== id
+    );
      this.saveExpenses();
    }
    //Give me only expenses that match this category

@@ -8,6 +8,7 @@ const category = document.getElementById("category");
 const list = document.getElementById("expenseList");
 const total = document.getElementById("total");
 const form = document.getElementById("expenseForm").reset();
+const filterCategory = document.getElementById("filterCategory");
 
 //creating ONE object that will store all expenses.
 const tracker = new ExpenseTracker();
@@ -17,6 +18,7 @@ updateUI();
 // add expense on click // event listener
 addBtn.addEventListener("click", () => {
     const expense = new Expense ( //creating a single expense item.
+        Date.now(),
         description.value,
         Number(amount.value),
         category.value.toLowerCase()
@@ -56,7 +58,7 @@ function updateUI(){
         <td class="p-3">Ksh ${expense.amount}</td>
         <td class="p-3 text-center">
             <button
-                onclick="deleteExpense(${index})"
+                onclick="deleteExpense(${expense.id})"
                 class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
             >
                 Delete
