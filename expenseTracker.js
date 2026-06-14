@@ -4,8 +4,8 @@ export class ExpenseTracker{
     }
     // add a new expense
     addExpense(expense){
-   this.expenses.push(expense);
-   this.saveExpenses()
+   this.expenses = [...this.expenses, expense]; // Take all existing expenses, copy them, then add the new one at the end.
+   this.saveExpenses();
    }
 
    // Go through all expenses and add their amounts
